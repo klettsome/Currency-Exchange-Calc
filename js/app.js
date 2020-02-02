@@ -15,6 +15,7 @@ const calculate = () => {
     .then(res => res.json())
     .then(result => {
       const rate = result.rates[baseCurrencyTwo];
+
       console.log(rate);
 
       rateTextOne.innerText = `1 ${
@@ -33,6 +34,7 @@ const handleClick = () => {
   const temp = currencyOne.value;
   currencyOne.value = currencyTwo.value;
   currencyTwo.value = temp;
+  calculate();
 };
 
 currencyOne.addEventListener("change", calculate);
